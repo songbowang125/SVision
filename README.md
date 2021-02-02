@@ -1,18 +1,24 @@
-DeepSV
+## SVision
 
+SVision is a deep learning-based structural variants caller that takes aligned reads or contigs as input. 
+Especially, SVision implements a targeted multi-objects recognition framework, detecting and characterizing both simple and
+complex structural variants from three-channel similarity images.
+
+Please check the wiki page for more details. 
 
 ===================================
-Install DeepSV
+## Install and run
 
-# # Auto install by conda (Non-valid for now)
-conda install -c bioconda SVision
 
-# # Manually install by conda and source code
-Step1: Install Miniconda or Anaconda on your machine
+#### Install SVision from source
+Step1: Create a new environment with conda
+
 Step2: Install required packages:
 		conda install pysam
 		conda install tensorflow
 		conda install opencv-python
+	
+
 Step3: Install source code
 		git ....
 		cd SVision
