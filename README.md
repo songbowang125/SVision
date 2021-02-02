@@ -7,8 +7,7 @@ Please check the wiki page for more details.
 
 ## Install and run
 
-### Install SVision
-#### Install from source
+### Install from source
 Step1: Create a python environment with conda
 
 ```
@@ -28,10 +27,9 @@ Step3: Install from source code
 git clone https://github.com/songbowang125/SVision.git
 cd SVision
 python setup.py install
-
 ```
 
-#### Install from Anaconda
+### Install from Anaconda
 
 To be continue ...
 
@@ -39,7 +37,7 @@ To be continue ...
 ### Usage
 
 ```
-Python SVision [parameters] -o <output path> -b <input bam path> -g <reference> -m <model path>
+SVision [parameters] -o <output path> -b <input bam path> -g <reference> -m <model path>
 ```
 
 
@@ -49,7 +47,7 @@ Python SVision [parameters] -o <output path> -b <input bam path> -g <reference> 
 
 1. Fixing insertion length for detailed breakpoints.
 
-2020.11.16(v1.2)
+2020.11.16 (v1.2)
 
 1. Adding function for calling from minimap2 aligned BAM, where CIGAR operator is different from NGMRL.
 2. Adding Graph representation for detected complex structural variants.
@@ -81,10 +79,6 @@ Python SVision [parameters] -o <output path> -b <input bam path> -g <reference> 
 2020.7.20 (v1.0.3)
 
 1. Adding log file in the output
-
-2020.7.16
-
-1. Project created
 
 ## Contact
 If you have any questions, please feel free to contact: jiadong324@gmail.com, songbowang125@163.com
