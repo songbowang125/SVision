@@ -1,84 +1,65 @@
-## SVision
-
-SVision is a deep learning-based structural variants caller that takes aligned reads or contigs as input. Especially, SVision implements a targeted multi-objects recognition framework, detecting and characterizing both simple and complex structural variants from three-channel similarity images.
-
-Please check the wiki page for more details. 
+DeepSV
 
 
-## Install and run
+===================================
+Install DeepSV
 
-### Install from source
-Step1: Create a python environment with conda
+# # Auto install by conda (Non-valid for now)
+conda install -c bioconda SVision
 
-```
-conda create -n svision-env python=3.6
-```
-
+# # Manually install by conda and source code
+Step1: Install Miniconda or Anaconda on your machine
 Step2: Install required packages:
-
-```
-conda install pysam
-conda install tensorflow
-conda install opencv-python
-```
-Step3: Install from source code
-
-```
-git clone https://github.com/songbowang125/SVision.git
-cd SVision
-python setup.py install
-```
-
-### Install from Anaconda
-
-To be continue ...
+		conda install pysam
+		conda install tensorflow
+		conda install opencv-python
+Step3: Install source code
+		git ....
+		cd SVision
+		pip install .
 
 
-### Usage
 
-```
-SVision [parameters] -o <output path> -b <input bam path> -g <reference> -m <model path>
-```
+===================================
+Change Log:
+2020.7.16
+    Fix a bug when discern major and minor segments at src/analyze_reads.py line 20
 
+2020.7.17 SVision v1.0.2
+    Filter cluster with wrong cords
 
-## Change Logs
+2020.7.20 SVision v1.0.3
+    Add log file
 
-2021.1.3 (v1.2.1):
+2020.7.28 SVision v1.1.0
+    Add shift operation
 
-1. Fixing insertion length for detailed breakpoints.
+2020.8.10 SVision v1.1.1
+    Modify SV and CSV's definition
 
-2020.11.16 (v1.2)
+2020.8.12 SVision v1.1.2
+    Fix bug when meeting chrUn_JTFH01001938v1_decoy
 
-1. Adding function for calling from minimap2 aligned BAM, where CIGAR operator is different from NGMRL.
-2. Adding Graph representation for detected complex structural variants.
-3. Adding a prameter for detecting from contig aligned BAMs.
+2020.8.26 SVision v1.1.3
+    add refine mode
 
-2020.10.18 (v1.1.6)
+2020.8.26 SVision v1.1.4
+    report DNA repair mechanism
 
-1. Making changes to the formation mechanism inference module.
-2. Adding GT, DV and DF to the standard VCF output.
+2020.9.17 SVision v1.1.5
+    process_cigars() in collect_signatures.py affect the  breakpoints' precision of short (about 50bp) DEL and INS
 
-2020.9.17 (v1.1.5)
+2020.10.18 SVision v1.1.6
+    Motify mechanism if conditions
+    Add GT, DV, DF output
 
-1. Fixed bug: The function process_cigars() in collect_signatures.py affect the breakpoints' precision of short (about 50bp) DEL and INS.
+2020.11.16 SVision v1.2
+    Fig Bug when dealing minimap2-align, which SA tag has wrong CIGAR
+    Add Graph representation
+    Add a prameter for detecting from contigs
 
-2020.8.26 (v1.1.4)
-
-1. Adding a SV formation mechanism inference module.
-
-2020.8.26 (v1.1.3)
-
-1. Adding internal breakpoints refine module.
-
-2020.8.12 (v1.1.2)
-
-1. Fixing bug while processing alternative contigs, such as chrUn_JTFH01001938v1_decoy
-2. Adding breakpoint left shift operation
-3. Fixing bug while distinguish major and minor segments at src/analyze_reads.py line 20
-
-2020.7.20 (v1.0.3)
-
-1. Adding log file in the output
-
-## Contact
-If you have any questions, please feel free to contact: jiadong324@gmail.com, songbowang125@163.com
+2021.1.3 SVision v1.2.1
+    fix bug: ins length in detailed bkps
+# Non-use
+# 2020.10.7 SVision v1.2.0
+#    add mechanism as a parameter. and the mechanism includes TE, VNTR, MMBIR, NHEJ, NAHR et. al

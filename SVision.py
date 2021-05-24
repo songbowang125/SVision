@@ -126,7 +126,7 @@ if __name__ == '__main__':
         cords = str(region).split(':')[1]
         start = int(cords.split('-')[0])
         end = int(cords.split('-')[1])
-
+    # chroms = ['chr20']
     if len(chroms) == 0:
         print('[ERROR]: No mapped reads in this bam. Exit!')
         exit()
@@ -153,7 +153,7 @@ if __name__ == '__main__':
 
     process_pool = multiprocessing.Pool(processes=options.thread_num)
     pool_rets = []
-
+    chroms = ['chr3']
     if refine_flag == 0:
 
         # traverse chroms to collect signatures and clusters
@@ -277,8 +277,8 @@ if __name__ == '__main__':
 
     # # rm tmp folder
     # shutil.rmtree(clusters_out_path)
-    shutil.rmtree(segments_out_path)
-    shutil.rmtree(predict_results_dir)
+    # shutil.rmtree(segments_out_path)
+    # shutil.rmtree(predict_results_dir)
 
     log_file.close()
 
